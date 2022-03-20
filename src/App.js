@@ -6,7 +6,7 @@ import LoginScreen from './Screens/loginInterface/LoginScreen';
 
 function App() {
   return <div className={styles.container}>
-    <LoginScreen />
+    <HomeScreen />
     </div>;
 }
 
