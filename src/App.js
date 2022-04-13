@@ -1,12 +1,23 @@
 import styles from './index.module.css';
-import Login from './Components/login/Login';
-import { Teams } from './Components/teams/Teams';
+
 import HomeScreen from './Screens/dashboard/HomeScreen';
 import LoginScreen from './Screens/loginInterface/LoginScreen';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import { useState } from 'react';
+
 
 function App() {
+
+  const[isLogged,setIsLogged]=useState(false);
   return <div className={styles.container}>
-    <HomeScreen />
+    
+    <BrowserRouter>
+                <Routes>
+                    <Route exact path="/" element={<LoginScreen isLogged={isLogged} setIsLogged={setIsLogged} />}/>
+                    <Route path='/home' element={<HomeScreen isLogged={isLogged} />}/>
+                    
+                </Routes>
+                </BrowserRouter>
     </div>;
 }
 

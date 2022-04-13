@@ -224,3 +224,7 @@ form label.password button.toggle-visibility span{vertical-align: middle;}
 		margin-top: 700px;
 	}
   }
+  .alert{
+	  color: #c0392b;
+	  font-weight: 600;
+  }

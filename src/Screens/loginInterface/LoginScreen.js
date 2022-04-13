@@ -2,9 +2,9 @@ import Login from "../../Components/login/Login"
 
 
 
-const LoginScreen=()=>{
+const LoginScreen=({isLogged,setIsLogged})=>{
     return<>
-    <Login />
+    <Login isLogged={isLogged} setIsLogged={setIsLogged} />
     </>
 }
 export default LoginScreen;
