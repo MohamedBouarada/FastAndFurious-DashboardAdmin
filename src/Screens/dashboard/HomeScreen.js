@@ -5,12 +5,14 @@ import styles from "./homeScreen.module.css";
 const HomeScreen=({isLogged})=>{
     
     return<>
-    {isLogged && <><Teams competition="SUMO" />
+    {isLogged && <>
+    <Teams competition="SUMO" />
     <Teams competition="Formula" />
     <Teams competition="Rally" />
     <Teams competition="Entrepreneurial" />
     <Teams competition="CAO" />
     <Teams competition="Junior" />
+    <Teams competition="carwars" />
     </>
     }
     {!isLogged && <div className={styles.erreur}> you are not authorised !!!</div>}

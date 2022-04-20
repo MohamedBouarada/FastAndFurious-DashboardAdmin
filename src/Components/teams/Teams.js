@@ -67,13 +67,14 @@ export const Teams = ({ competition }) => {
             <th>Membre1</th>
             <th>Membre2</th>
             <th>Membre3</th>
+            <th>Membre4</th>
             <th>Confirmation</th>
             <th>suppression</th>
           </tr>
         </thead>
         {List.length>0 &&<tbody>
         {List.map((item, index) => {
-                const {_id,competition,nomEquipe,etablissement,nomPrenomChef,mailChef,telChef,membre1,membre2,membre3,__v}=item;
+                const {_id,competition,nomEquipe,etablissement,nomPrenomChef,mailChef,telChef,membre1,membre2,membre3,membre4,__v}=item;
             
                 return(
                     <tr>
@@ -87,6 +88,7 @@ export const Teams = ({ competition }) => {
                         <td >{membre1}</td>
                         <td >{membre2}</td>
                         <td >{membre3} </td>
+                        <td >{membre4} </td>
                         <td>
                         <Button className={styles.confirmer} onClick={async()=>{
                           setEmailChef(mailChef);
