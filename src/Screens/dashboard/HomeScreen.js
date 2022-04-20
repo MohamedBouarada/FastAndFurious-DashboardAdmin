@@ -1,8 +1,15 @@
 
 import { Teams } from "../../Components/teams/Teams";
 import styles from "./homeScreen.module.css";
-
+import {useEffect} from "react";
+import {useNavigate} from "react-router-dom";
 const HomeScreen=({isLogged})=>{
+    let navigate = useNavigate()
+    useEffect(()=>{
+        if(!isLogged) {
+        navigate("/")
+        }
+    }, [])
     
     return<>
     {isLogged && <>
