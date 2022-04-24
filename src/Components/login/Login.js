@@ -22,7 +22,7 @@ const Login =({isLogged,setIsLogged})=>{
               password,
             }
           })
-          console.log(response.data);
+          // console.log(response.data);
           setIsLogged(true);
           localStorage.setItem("site-fast-admin-token",response.data);
         } catch (error) {
