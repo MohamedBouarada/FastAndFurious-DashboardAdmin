@@ -9,6 +9,11 @@ const HomeScreen = ({ isLogged,setIsLogged }) => {
         setIsLogged(false)
         navigate('/')
     }
+    useEffect(()=>{
+        if(!isLogged) {
+        navigate("/")
+        }
+    }, [])
   return (
     <>
       {isLogged && (

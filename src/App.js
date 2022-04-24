@@ -16,6 +16,16 @@ function App() {
     }
   },[])
   const[isLogged,setIsLogged]=useState(false);
+  const [token,setToken] = useState(getTokenFromLocalStorage())
+  useEffect(()=>{
+      localStorage.setItem("site-fast-admin-token" ,JSON.stringify(token) )
+      if(token.length>0) {
+          setIsLogged(true)
+      } else {
+          setIsLogged(false)
+      }
+  }, [token])
+
   return <div className={styles.container}>
     
     <BrowserRouter>

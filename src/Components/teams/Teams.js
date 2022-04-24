@@ -72,6 +72,7 @@ export const Teams = ({ competition }) => {
             <th>Membre1</th>
             <th>Membre2</th>
             <th>Membre3</th>
+            <th>Membre4</th>
             <th>Confirmation</th>
             <th>suppression</th>
           </tr>

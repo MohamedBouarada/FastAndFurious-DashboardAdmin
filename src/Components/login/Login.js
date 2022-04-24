@@ -4,7 +4,7 @@ import logo from '../logos/logo.png';
 import axios from "axios"; 
 import  { Navigate } from 'react-router-dom'
 axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*'
-const Login =({isLogged,setIsLogged})=>{
+const Login =({isLogged,setIsLogged,setToken})=>{
 
       const [alert ,setAlert]=useState("");
       const[email,setEmail]=useState("");
@@ -24,10 +24,13 @@ const Login =({isLogged,setIsLogged})=>{
           })
           // console.log(response.data);
           setIsLogged(true);
-          localStorage.setItem("site-fast-admin-token",response.data);
+          setToken(response.data)
+          axios.defaults.headers.common['Authorization'] = response.data
         } catch (error) {
           console.log(error.response.data);
           setAlert(error.response.data);
+          setToken("")
+            setIsLogged(false);
         }
       }
       if (isLogged) {
