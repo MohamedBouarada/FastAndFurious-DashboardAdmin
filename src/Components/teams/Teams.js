@@ -16,7 +16,7 @@ export const Teams = ({ competition }) => {
         url: `http://localhost:5000/participant/teams/${competition}`,
         headers: { authorization: local_token },
       });
-      console.log(response.data);
+      // console.log(response.data);
       setList(response.data);
     } catch (error) {
       console.log(error.response.data);
