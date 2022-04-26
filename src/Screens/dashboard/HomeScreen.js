@@ -3,8 +3,14 @@ import { Teams } from "../../Components/teams/Teams";
 import styles from "./homeScreen.module.css";
 import {useEffect} from "react";
 import {useNavigate} from "react-router-dom";
-const HomeScreen=({isLogged})=>{
-    let navigate = useNavigate()
+const HomeScreen=({isLogged , setIsLogged})=>{
+    let navigate = useNavigate();
+    const handleLogOut = () => {
+        localStorage.removeItem('site-fast-admin-token');
+        setIsLogged(false)
+        navigate('/')
+    }
+    
     useEffect(()=>{
         if(!isLogged) {
         navigate("/")
@@ -13,10 +19,10 @@ const HomeScreen=({isLogged})=>{
     
     return<>
     {isLogged && <>
-    <Teams competition="SUMO" />
+    <Teams competition="Entrepreneurial" />
     <Teams competition="Formula" />
     <Teams competition="Rally" />
-    <Teams competition="Entrepreneurial" />
+    
     <Teams competition="CAO" />
     <Teams competition="Junior" />
     <Teams competition="carwars" />

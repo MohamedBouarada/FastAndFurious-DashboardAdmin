@@ -24,7 +24,7 @@ function App() {
     
     <BrowserRouter>
                 <Routes>
-                    <Route exact path="/" element={<LoginScreen  setToken={setToken}isLogged={isLogged} setIsLogged={setIsLogged} />}/>
+                    <Route exact path="/" element={<LoginScreen  setToken={setToken} isLogged={isLogged} setIsLogged={setIsLogged} />}/>
                     <Route path='/home' element={<HomeScreen isLogged={isLogged} />}/>
                     
                 </Routes>
